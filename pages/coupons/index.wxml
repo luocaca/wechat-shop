@@ -29,7 +29,7 @@
           <view class="weui-panel" wx:for="{{sysCoupons}}" wx:key="*key" wx:if="{{!item.pwd}}">
             <view class="weui-panel__hd">{{item.name}}</view>
             <view class="weui-panel__bd">
-              <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media -box weui-media-box_text">
                 <view class="weui-media-box__title weui-media-box__title_in-text">
                   <text class='price' wx:if="{{item.moneyMin == item.moneyMax}}">￥ {{item.moneyMax}}</text>
                   <text class='price' wx:else>￥ {{item.moneyMin}} - {{item.moneyMax}}</text>

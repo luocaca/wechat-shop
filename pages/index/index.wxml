@@ -1,21 +1,7 @@
 <view class="container">
   <view class="page__bd">
-    <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text " class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="search" bindconfirm='toSearch' />
-          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-            <icon type="clear" size="14"></icon>
-          </view>
-        </view>
-        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-          <icon class="weui-icon-search" type="search" size="14"></icon>
-          <view class="weui-search-bar__text">搜索</view>
-        </label>
-      </view>
-      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
-    </view>
+
+
     <!-- <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
       <navigator url="" class="weui-cell" hover-class="weui-cell_active">
         <view class="weui-cell__bd">
@@ -48,20 +34,9 @@
         </navigator>
       </swiper>
     </view>
-    <scroll-view scroll-x>
-      <view class="category-box" style='width:{{category_box_width}}rpx;'>
-        <view class="category-list" wx:for="{{categories}}" wx:if="{{index%2===0}}" wx:key="*this">
-          <view class="category-column {{activeCategoryId == categories[index].id ? 'type-item-on' : ''}}" bindtap="tabClick" id="{{categories[index].id}}">
-            <image class="category-imgbox" src="{{categories[index].icon}}"></image>
-            <view class="category-title">{{categories[index].name}}</view>
-          </view>
-          <view class="category-column {{activeCategoryId == categories[index+1].id ? 'type-item-on' : ''}}" bindtap="tabClick" id="{{categories[index+1].id}}">
-            <image class="category-imgbox" src="{{categories[index+1].icon}}"></image>
-            <view class="category-title">{{categories[index+1].name}}</view>
-          </view>
-        </view>
-      </view>
-    </scroll-view>
+
+
+
   </view>
   <view class="swiper-container">
     <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
@@ -78,7 +53,11 @@
     </view>
   </view>
   <view class="weui-loadmore weui-loadmore_line" wx:if="{{goodsRecommend.length > 0 && activeCategoryId == 0}}">
+
+
     <view class="weui-loadmore__tips weui-loadmore__tips_in-line">爆品推荐</view>
+
+
   </view>
   <view class="goods-container" wx:if="{{goodsRecommend.length > 0 && activeCategoryId == 0}}">
     <view class="goods-box" wx:for-items="{{goodsRecommend}}" wx:key="*this" bindtap="toDetailsTap" data-id="{{item.id}}">
@@ -139,7 +118,10 @@
 
   <view class='space'></view>
   <view class="weui-loadmore weui-loadmore_line">
-    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">商品列表</view>
+    <!-- <view class="weui-loadmore__tips weui-loadmore__tips_in-line"> -->
+    <image style="width:80px;height:26px;" class="weui-loadmore__tips weui-loadmore__tips_in-line" src='/images/tuijian.png'></image>
+    <!-- </view> -->
+
   </view>
   <view class="goods-container">
     <view class="goods-box" wx:for-items="{{goods}}" wx:key="{{index}}" bindtap="toDetailsTap" data-id="{{item.id}}">

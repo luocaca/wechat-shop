@@ -249,9 +249,17 @@ Page({
     });
   },
   inputTyping: function (e) {
+
+
     this.setData({
       inputVal: e.detail.value
     });
+//  this.getGoodsList this.getGoodsList(this.data.activeCategoryId, true)
+
+    this.getGoodsList(this.data.activeCategoryId, true)
+
+
+
   },
   // 以下为砍价业务
   kanjiaGoods(){
