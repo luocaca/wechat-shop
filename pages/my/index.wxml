@@ -1,8 +1,12 @@
 <view class="container">
-	<view class="userinfo">
-		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
-		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
-	</view>
+  <view class="userinfo">
+
+    <text class='every-day'  >每日签到</text>
+
+
+    <image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
   <view class="asset">
     <view class='item' bindtap='goAsset'>
       <view>{{balance}}</view>
@@ -19,37 +23,45 @@
   </view>
   <view class='order-shortcut'>
     <view class='item' bindtap='goOrder' data-type="0">
+
+      <block wx:if="">
+        <view class="tip"></view>
+      </block>
+
       <image class="icon" src="/images/order/topay.png" background-size="cover"></image>
       <view class='text'>待付款</view>
     </view>
     <view class='item' bindtap='goOrder' data-type="1">
+
       <image class="icon" src="/images/order/fahuo.png" background-size="cover"></image>
       <view class='text'>待发货</view>
     </view>
     <view class='item' bindtap='goOrder' data-type="2">
+      <view class="tip"></view>
       <image class="icon" src="/images/order/shouhuo.png" background-size="cover"></image>
       <view class='text'>待收货</view>
     </view>
     <view class='item' bindtap='goOrder' data-type="3">
+      <view class="tip"></view>
       <image class="icon" src="/images/order/pj.png" background-size="cover"></image>
       <view class='text'>待评价</view>
     </view>
   </view>
 
   <block wx:if="{{vipLevel > 0}}">
-  <view style="height:10rpx;background: #eee;width:100%;"></view>
-  <view class="my-item" wx:if="{{!apiUserInfoMap.base.isSeller}}">
-    <navigator url="/pages/fx/apply-status" hover-class="navigator-hover">成为分销商</navigator>
-  </view>
-  <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
-    <navigator url="/pages/fx/apply-status" hover-class="navigator-hover">分销中心</navigator>
-  </view>
-  <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
-    <navigator url="/pages/fx/members" hover-class="navigator-hover">我的团队</navigator>
-  </view>
-  <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
-    <navigator url="/pages/fx/commisionLog" hover-class="navigator-hover">返佣明细</navigator>
-  </view>
+    <view style="height:10rpx;background: #eee;width:100%;"></view>
+    <view class="my-item" wx:if="{{!apiUserInfoMap.base.isSeller}}">
+      <navigator url="/pages/fx/apply-status" hover-class="navigator-hover">成为分销商</navigator>
+    </view>
+    <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
+      <navigator url="/pages/fx/apply-status" hover-class="navigator-hover">分销中心</navigator>
+    </view>
+    <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
+      <navigator url="/pages/fx/members" hover-class="navigator-hover">我的团队</navigator>
+    </view>
+    <view class="my-item" wx:if="{{apiUserInfoMap.base.isSeller}}">
+      <navigator url="/pages/fx/commisionLog" hover-class="navigator-hover">返佣明细</navigator>
+    </view>
   </block>
 
   <view style="height:10rpx;background: #eee;width:100%;"></view>
@@ -64,7 +76,7 @@
   </view>
   <view class="my-item">
     <navigator url="/pages/score-excharge/index" hover-class="navigator-hover">积分兑换</navigator>
-  </view>  
+  </view>
   <view class="my-item">
     <navigator url="/pages/select-address/index" hover-class="navigator-hover">收货地址</navigator>
   </view>
@@ -86,7 +98,7 @@
   <view class="my-item to-authorize">
     <button type="warn" bindtap="relogin">重新授权登录</button>
   </view>
-  
+
   <view style="height:20rpx;background: #eee;width:100%;"></view>
   <view class="version">Powered by EastWorld v {{version}}</view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>

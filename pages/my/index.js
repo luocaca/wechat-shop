@@ -2,15 +2,21 @@ const app = getApp()
 const CONFIG = require('../../config.js')
 const WXAPI = require('../../wxapi/main')
 Page({
-	data: {
-    balance:0.00,
-    freeze:0,
-    score:0,
-    score_sign_continuous:0
+  data: {
+    balance: 0.00,
+    freeze: 0,
+    score: 0,
+    score_sign_continuous: 0,
+    count_id_no_reputation: 0, //待评价
+    count_id_no_transfer: 1, //代发货
+    count_id_no_pay: 0, //待支付
+    count_id_no_confirm: 0, //待收货
+    count_id_success: 1 //已成功
+
   },
-	onLoad() {
-    
-	},	
+  onLoad() {
+
+  },
   onShow() {
     let that = this;
     let userInfo = wx.getStorageSync('userInfo')
@@ -26,11 +32,11 @@ Page({
     this.getUserApiInfo();
     this.getUserAmount();
   },
-  aboutUs : function () {
+  aboutUs: function() {
     wx.showModal({
       title: '关于我们',
       content: '本系统基于开源小程序商城系统 https://github.com/EastWorld/wechat-app-mall 搭建，祝大家使用愉快！',
-      showCancel:false
+      showCancel: false
     })
   },
   getPhoneNumber: function(e) {
@@ -47,7 +53,7 @@ Page({
       token: wx.getStorageSync('token'),
       encryptedData: e.detail.encryptedData,
       iv: e.detail.iv
-    }).then(function (res) {
+    }).then(function(res) {
       if (res.code === 10002) {
         app.goLoginPageTimeOut()
         return
@@ -68,9 +74,9 @@ Page({
       }
     })
   },
-  getUserApiInfo: function () {
+  getUserApiInfo: function() {
     var that = this;
-    WXAPI.userDetail(wx.getStorageSync('token')).then(function (res) {
+    WXAPI.userDetail(wx.getStorageSync('token')).then(function(res) {
       if (res.code == 0) {
         let _data = {}
         _data.apiUserInfoMap = res.data
@@ -81,9 +87,9 @@ Page({
       }
     })
   },
-  getUserAmount: function () {
+  getUserAmount: function() {
     var that = this;
-    WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
+    WXAPI.userAmount(wx.getStorageSync('token')).then(function(res) {
       if (res.code == 0) {
         that.setData({
           balance: res.data.balance.toFixed(2),
@@ -93,20 +99,20 @@ Page({
       }
     })
   },
-  relogin:function(){
+  relogin: function() {
     app.goLoginPageTimeOut()
   },
-  goAsset: function () {
+  goAsset: function() {
     wx.navigateTo({
       url: "/pages/asset/index"
     })
   },
-  goScore: function () {
+  goScore: function() {
     wx.navigateTo({
       url: "/pages/score/index"
     })
   },
-  goOrder: function (e) {
+  goOrder: function(e) {
     wx.navigateTo({
       url: "/pages/order-list/index?type=" + e.currentTarget.dataset.type
     })

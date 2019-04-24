@@ -1,19 +1,23 @@
-.container{
+.container {
   min-height: 100%;
   overflow: hidden;
   overflow-y: hidden;
 }
 
 .userinfo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 750rpx;
+  position: relative;
 }
+
 .userinfo-avatar {
-	width: 160rpx;
-	height: 160rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
 }
+
 .userinfo-nickname {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
@@ -23,50 +27,52 @@
 .asset {
   display: flex;
   border-top: 1px solid #eee;
-  padding-top:20rpx;
-  padding-bottom:20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
 }
+
 .asset .item {
   display: flex;
   flex-direction: column;
-  width:375rpx;
+  width: 375rpx;
   text-align: center;
   font-size: 13px;
   line-height: 20px;
-  color:#333;
+  color: #333;
 }
+
 .asset .right {
   border-left: 1px solid #eee;
 }
 
 .version {
-  width:100%;
+  width: 100%;
   height: 40rpx;
-	line-height: 40rpx;
-	font-size: 24rpx;
-	text-align: center;  
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
   padding: 40rpx;
 }
 
-.my-item{
-    width: 100%;
-    background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
-    background-size: 16rpx auto,750rpx auto;
-    border-bottom: 1px solid #eee;
-    height: 80rpx;
-    line-height: 80rpx;
-    padding-left: 100rpx;
-    font-size:14px;
+.my-item {
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto, 750rpx auto;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
+  font-size: 14px;
 }
 
-.about{
-    width: 100%;
-    background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
-    background-size: 16rpx auto,750rpx auto;
-    margin: 20rpx 0; 
-    height: 80rpx;
-    line-height: 80rpx;
-    padding-left: 100rpx;
+.about {
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto, 750rpx auto;
+  margin: 20rpx 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
 }
 
 .order-shortcut {
@@ -74,21 +80,25 @@
   padding-top: 20rpx;
   padding-bottom: 20rpx;
 }
+
 .order-shortcut .item {
   display: flex;
   flex-direction: column;
   width: 187rpx;
   text-align: center;
 }
+
 .order-shortcut .item .icon {
   width: 67rpx;
   height: 67rpx;
   margin-left: 60rpx;
 }
+
 .order-shortcut .item .text {
   font-size: 12px;
 }
-.to-authorize{
+
+.to-authorize {
   border: none;
   padding: 0rpx;
   margin: 0rpx;
@@ -97,8 +107,48 @@
   height: auto;
   line-height: auto;
 }
+
 /* 绑定手机号 */
-.bind-phone-number{
+
+.bind-phone-number {
   margin: 20rpx;
   width: 100%;
 }
+
+.item {
+  position: relative;
+}
+
+.every-day {
+  position: absolute;
+  margin-left: 200rpx;
+  background-color: #0fafaf;
+  color: white;
+  float: right;
+}
+
+.tip {
+  width: 16rpx;
+  height: 16rpx;
+  position: absolute;
+  left: 136rpx;
+  /* top: 23rpx; */
+  background-color: #f43530;
+  border-radius: 50%;
+  /* color: white;
+  position: absolute;
+  z-index: 999999;
+  margin-left: 70%;
+  float: unset;
+  top: -10rpx;
+  background: red;
+  border-radius: 66rpx;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  font-size: 26rpx; */
+}
+
+/* 每日签到 */
+
+

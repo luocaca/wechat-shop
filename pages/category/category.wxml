@@ -6,7 +6,13 @@
     <block wx:for="{{categories}}" wx:key="id">
 
       <view class="category-item {{categorySelected==item.scrollId?'category-item-active':''}}" data-id='{{item.scrollId}}' id='{{item.scrollId}}' bindtap='onCategoryClick'>
+
+        <view class="left-line {{categorySelected==item.scrollId?'left-line-active':''}}" data-id='{{item.scrollId}}' id='{{item.scrollId}}'  ></view>
+
         <text>{{item.name}}</text>
+
+
+
       </view>
 
     </block>
@@ -26,7 +32,7 @@
           <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{goods.pic}}_m"></image>
 
           <view class='goods-info'>
-            <text >{{goods.name}}</text>
+            <text>{{goods.name}}</text>
             <text style='color:red;'>￥{{goods.minPrice}}</text>
           </view>
 
